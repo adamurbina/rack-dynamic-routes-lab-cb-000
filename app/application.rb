@@ -8,6 +8,7 @@ class Application
 
         if req.path.match(/items/)
             search_item = req.params['items']
+            print("search_item >> #{search_item}")
             resp.write handle_request(search_item)
             resp.status = 200
         else
