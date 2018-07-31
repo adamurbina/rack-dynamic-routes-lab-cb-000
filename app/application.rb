@@ -7,7 +7,7 @@ class Application
         req = Rack::Request.new(env)
 
         if req.path.match(/items/)
-            search_item = req.params['items']
+            search_item = req.path.split("/items/").last
             print("search_item >> #{search_item}")
             resp.write handle_request(search_item)
             resp.status = 200
