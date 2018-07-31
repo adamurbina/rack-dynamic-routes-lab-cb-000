@@ -9,6 +9,8 @@ class App
         if req.path.match(/items/)
             search_item = req.params['items']
             resp.write handle_request(search_item)
+        else
+            resp.write "Path not found"
         end
     end
 
