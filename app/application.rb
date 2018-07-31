@@ -12,6 +12,8 @@ class Application
         else
             resp.write "Path not found"
         end
+
+        resp.finish
     end
 
     def handle_request(search_item)
