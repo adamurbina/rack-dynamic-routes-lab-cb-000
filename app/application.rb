@@ -6,7 +6,10 @@ class App
         resp = Rack::Response.new
         req = Rack::Request.new(env)
 
-
+        if req.path.match(/items/)
+            search_item = req.params['items']
+            handle_request(search_item)
+        end
     end
 
     def handle_request(search_item)
