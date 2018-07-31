@@ -8,7 +8,6 @@ class Application
 
         if req.path.match(/items/)
             search_item = req.path.split("/items/").last
-            print("search_item >> #{search_item}")
             resp.write handle_request(search_item)[0]
             resp.status = handle_request(search_item)[1]
         else
@@ -21,6 +20,7 @@ class Application
 
     def handle_request(search_item)
         item = @@items.select{|item| item.name = search_item}
+        puts("item_array >> #{item}")
         if item != []
             return ["#{item[0].price}", 200]
         else
