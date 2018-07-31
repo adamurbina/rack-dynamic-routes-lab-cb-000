@@ -1,3 +1,3 @@
-class if __FILE__ == $PROGRAM_NAME
+class App
     
 end
