@@ -9,8 +9,10 @@ class Application
         if req.path.match(/items/)
             search_item = req.params['items']
             resp.write handle_request(search_item)
+            resp.status = 200
         else
-            resp.write "Path not found"
+            resp.write "Route not found"
+            resp.status = 404
         end
 
         resp.finish
