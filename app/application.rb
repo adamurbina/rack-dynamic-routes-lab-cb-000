@@ -20,7 +20,6 @@ class Application
 
     def handle_request(search_item)
         item = @@items.select{|item| item.name == search_item}
-        puts("item_array >> #{item}")
         if item != []
             return ["#{item[0].price}", 200]
         else
