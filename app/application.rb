@@ -21,7 +21,7 @@ class Application
 
     def handle_request(search_item)
         item = @@items.select{|item| item.name = search_item}
-        if item
+        if item != []
             return "#{item[0].price}"
         else
             return "Item not found"
